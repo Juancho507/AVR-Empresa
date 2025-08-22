@@ -1,0 +1,29 @@
+/* Hero reducido tipo banner */
+.hero {
+  background: linear-gradient(to bottom, #a5d6a7, #90caf9);
+  height: 30vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centrado vertical */
+  text-align: left;
+  padding-left: 50px;
+}
+
+/* Título del Hero */
+.hero h1 {
+  font-family: 'Poppins', sans-serif; /* más moderno y elegante */
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1b5e20; /* verde fuerte */
+  margin: 0;
+}
+
+/* Subtítulo del Hero */
+.hero p {
+  font-family: 'Roboto', sans-serif; /* más simple y legible */
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 8px;
+  color: #263238; /* gris oscuro */
+}
