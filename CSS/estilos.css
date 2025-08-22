@@ -1,76 +1,188 @@
-/* Hero reducido tipo banner */
-.hero {
-  background: linear-gradient(to bottom, #a5d6a7, #90caf9);
-  height: 30vh;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* centrado vertical */
-  text-align: left;
-  padding-left: 50px;
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Título del Hero */
-.hero h1 {
-  font-family: 'Poppins', sans-serif; /* más moderno y elegante */
-  font-size: 2.2rem;
+#background-carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+#background-carousel .carousel-inner {
+  height: 100%;
+}
+
+#background-carousel .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#background-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.transparent-navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.transparent-navbar .navbar-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 10px 20px;
+}
+
+.transparent-navbar .navbar-nav .nav-link {
+  color: #fff !important;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  color: #1b5e20; /* verde fuerte */
-  margin: 0;
+  margin: 0 15px;
+  text-transform: uppercase;
 }
 
-/* Subtítulo del Hero */
-.hero p {
-  font-family: 'Roboto', sans-serif; /* más simple y legible */
-  font-size: 1.1rem;
-  font-weight: 400;
-  margin-top: 8px;
-  color: #263238; /* gris oscuro */
+.logo-area-desktop {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
 }
-/* Ajustes responsive para móviles */
-@media (max-width: 768px) {
-  /* Hero */
-  .hero {
-    height: auto;
-    padding: 60px 20px 40px 20px;
+
+.logo-area-desktop .logo-desktop {
+  width: 150px;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .hero-title-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.hero-section h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #a5d6a7;
+}
+
+.hero-section p {
+  color: #fff;
+}
+.main-content {
+  position: relative;
+  z-index: 1;
+  background-color: #c9e6d9;
+}
+.content-section {
+  padding: 5rem 0;
+}
+
+.content-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.content-card h2,
+.content-card h4 {
+  font-family: 'Raleway', sans-serif;
+  color: #1b5e20;
+  text-transform: uppercase;
+}
+
+.content-card p {
+  color: #2e2e2e;
+}
+.sabias-que {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5rem 0;
+}
+
+.sabias-que .sabias-que-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  padding: 40px;
+}
+
+.sabias-que h2 {
+  color: #a5d6a7;
+  margin-bottom: 2rem;
+}
+
+#sabiasQueCarousel .carousel-inner {
+  padding: 0 50px;
+}
+
+#sabiasQueCarousel .carousel-control-prev,
+#sabiasQueCarousel .carousel-control-next {
+  filter: invert(100%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  opacity: 1;
+}
+
+#sabiasQueCarousel .carousel-control-prev {
+  left: -20px;
+}
+
+#sabiasQueCarousel .carousel-control-next {
+  right: -20px;
+}
+
+#sabiasQueCarousel .carousel-control-prev-icon,
+#sabiasQueCarousel .carousel-control-next-icon {
+  background-size: 20px 30px;
+}
+
+.sabias-que .carousel-item .row {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sabias-que .carousel-item [class*="col-md-"] {
+  padding: 15px;
+}
+
+.sabias-que .carousel-item p {
+    color: #fff;
     text-align: center;
-  }
+}
 
-  .hero h1 {
-    font-size: 2rem; /* antes 3.5rem */
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
-  /* Secciones */
-  h2 {
-    font-size: 1.8rem !important;
-  }
-
-  h4 {
-    font-size: 1.2rem !important;
-  }
-
-  p, .lead {
-    font-size: 0.95rem;
-  }
-
-  /* Sabías que: centrar imágenes y textos */
-  .sabias-que img {
-    margin-top: 15px;
+@media (min-width: 768px) {
+  .sabias-que .carousel-item p {
+    text-align: left;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6rem;
+.sabias-que .carousel-item .img-fluid {
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .sabias-que .carousel-item .img-fluid {
+    height: 250px;
   }
-  .hero p {
-    font-size: 0.9rem;
+}
+
+@media (max-width: 991.98px) {
+  .transparent-navbar .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
   }
 }
