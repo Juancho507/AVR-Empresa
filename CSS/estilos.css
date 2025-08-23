@@ -59,14 +59,20 @@ body {
 }
 
 .hero-section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
+    height: 100vh; 
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-
+.main-content {
+    padding-top: 0 !important;
+}
+.content-section {
+    padding-top: 2rem !important;
+}
 .hero-section .hero-title-card {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
@@ -185,4 +191,83 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
   }
+}
+.gestion-card {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #28a745;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+}
+
+.gestion-card h2 {
+    color: #28a745 !important;
+}
+
+.gestion-card p {
+    color: #fff !important;
+}
+
+#background-carousel-gestion,
+#background-carousel-servicios,
+#background-carousel-nosotros,
+#background-carousel-contacto {
+  width: 100%;
+  height: 40vh; 
+  overflow: hidden;
+  position: relative;
+  z-index: -2; 
+  margin-top: 70px;
+}
+
+#background-carousel-gestion .carousel-inner,
+#background-carousel-servicios .carousel-inner,
+#background-carousel-nosotros .carousel-inner,
+#background-carousel-contacto .carousel-inner {
+  height: 100%;
+}
+
+#background-carousel-gestion .carousel-item,
+#background-carousel-servicios .carousel-item,
+#background-carousel-nosotros .carousel-item,
+#background-carousel-contacto .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#background-carousel-gestion img,
+#background-carousel-servicios img,
+#background-carousel-nosotros img,
+#background-carousel-contacto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-content {
+  padding-top: 40vh; 
+  position: relative;
+  z-index: 1;
+  background-color: #c9e6d9;
+}
+
+@media (max-width: 991.98px) {
+  .main-content {
+    padding-top: 45vh; 
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-content {
+    padding-top: 50vh; 
+  }
+}
+.residuo-img {
+    width: 350px; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.residuo-nombre {
+    font-family: 'Raleway', sans-serif; 
+    font-weight: 700; 
+    font-size: 1rem;
 }
