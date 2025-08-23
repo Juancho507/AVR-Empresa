@@ -45,7 +45,6 @@ body {
   object-fit: cover;
 }
 
-/* --- Barra de navegación --- */
 .transparent-navbar {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -153,6 +152,7 @@ body {
 .dark-card {
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
+  word-wrap: break-word;
 }
 
 .sabias-que {
