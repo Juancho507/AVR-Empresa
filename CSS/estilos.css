@@ -4,8 +4,11 @@ body {
   background-color: #e8f5e9;
 }
 
-/* Solo el carrusel de la página de inicio (index.html) debe ser fijo. */
-#background-carousel { 
+#background-carousel,
+#background-carousel-gestion,
+#background-carousel-servicios,
+#background-carousel-nosotros,
+#background-carousel-contacto {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,8 +18,6 @@ body {
   overflow: hidden;
 }
 
-/* Los carruseles de las páginas de contenido ya NO son 'fixed' en la sección anterior. */
-/* Aseguramos que la estructura interna mantenga la altura completa de su contenedor */
 #background-carousel .carousel-inner,
 #background-carousel-gestion .carousel-inner,
 #background-carousel-servicios .carousel-inner,
@@ -34,14 +35,13 @@ body {
   height: 100%;
 }
 
-/* REGLA CRUCIAL: Asegura que la imagen llene el espacio (height: 100%) y mantenga la proporción (object-fit: cover) */
 #background-carousel .carousel-item img,
 #background-carousel-gestion .carousel-item img,
 #background-carousel-servicios .carousel-item img,
 #background-carousel-nosotros .carousel-item img,
 #background-carousel-contacto .carousel-item img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
 }
 
@@ -96,11 +96,8 @@ body {
     }
 }
 
-/* SECCIÓN HERO AJUSTADA: 
-  - Se quita height: 100vh; ya que la altura es definida en el HTML (50vh).
-  - Se añade padding-top para evitar que el navbar tape el contenido. */
 .hero-section {
-  padding-top: 60px; /* Compensa la altura del navbar fijo */
+  height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -224,18 +221,13 @@ body {
 }
 
 .residuo-img {
-  width: 100%;
-  max-width: 350px; /* Limita el ancho para que no se estiren demasiado en desktop */
+  width: 350px;
   height: 200px;
-  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-  display: block; /* Para que margin: auto funcione */
-  margin-left: auto; 
-  margin-right: auto;
+  object-fit: cover;
 }
 
 .residuo-nombre {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 1rem;
-  margin-top: 0.5rem;
 }
