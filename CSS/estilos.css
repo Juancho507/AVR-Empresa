@@ -231,3 +231,21 @@ body {
   font-weight: 700;
   font-size: 1rem;
 }
+.servicio-img-avr {
+   width: 100%; 
+  max-width: 350px; 
+  
+  height: 300px;
+  object-fit: contain;
+  
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel-control-prev-icon.bg-success,
+.carousel-control-next-icon.bg-success {
+    background-color: #28a745 !important;
+    border-radius: 50%;
+    padding: 10px;
+}
