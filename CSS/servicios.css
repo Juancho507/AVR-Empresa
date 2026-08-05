@@ -1,0 +1,199 @@
+/* ==========================================================================
+   AVR PROYECCIONES AMBIENTALES — servicios.css
+   --------------------------------------------------------------------------
+   Estilos de Vistas/Servicios.html y Vistas/ingecap.html
+   --------------------------------------------------------------------------
+   Índice:
+     01. Filas de servicio (número + carrusel + texto)
+     02. Carrusel de servicio (imágenes uniformes)
+     03. INGECAP (marca + contacto)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. FILAS DE SERVICIO
+   -------------------------------------------------------------------------- */
+.service-row {
+  padding: 1.75rem 0;
+}
+
+.service-body .service-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--avr-accent-strong);
+  margin-bottom: 0.8rem;
+}
+
+.service-body .service-index::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--avr-accent);
+}
+
+.service-body h4 {
+  font-family: var(--avr-font-display);
+  font-weight: 800;
+  color: var(--avr-green-800);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.service-body .lead {
+  color: #3a4a41;
+  font-size: 1.02rem;
+}
+
+/* --------------------------------------------------------------------------
+   02. CARRUSEL DE SERVICIO (imágenes uniformes)
+   -------------------------------------------------------------------------- */
+.service-carousel {
+  border-radius: var(--avr-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--avr-shadow);
+  background: linear-gradient(150deg, #0b2417, #14331f);
+}
+
+/* Imagen completa siempre visible (sin recortes, con marco oscuro) */
+.service-carousel .carousel-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+}
+
+@media (min-width: 992px) {
+  .service-carousel .carousel-item img {
+    height: 360px;
+  }
+}
+
+/* Placeholder dentro de un carrusel (rellena la diapositiva) */
+.placeholder-tile--slide {
+  width: 100%;
+  height: 320px;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+@media (min-width: 992px) {
+  .placeholder-tile--slide {
+    height: 360px;
+  }
+}
+
+/* Controles circulares ámbar */
+.service-carousel .carousel-control-prev,
+.service-carousel .carousel-control-next {
+  width: 12%;
+}
+
+.service-carousel .carousel-control-prev-icon,
+.service-carousel .carousel-control-next-icon {
+  background-color: rgba(242, 169, 59, 0.95);
+  border-radius: 50%;
+  padding: 14px;
+  background-size: 60%;
+}
+
+.service-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.service-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: var(--avr-accent-strong);
+}
+
+/* --------------------------------------------------------------------------
+   03. INGECAP (marca + contacto)
+   -------------------------------------------------------------------------- */
+.ingecap-logo-hero {
+  max-width: 190px;
+  border-radius: 1rem;
+  box-shadow: var(--avr-shadow-lg);
+}
+
+.ingecap-contact .contact-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--avr-font-heading);
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgba(242, 169, 59, 0.45);
+  border-radius: 50rem;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ingecap-contact .contact-inline:hover {
+  background: var(--avr-accent);
+  color: var(--avr-green-950);
+  transform: translateY(-2px);
+}
+
+.ingecap-contact .contact-inline i {
+  color: var(--avr-accent);
+}
+
+.ingecap-contact .contact-inline:hover i {
+  color: var(--avr-green-950);
+}
+
+/* --------------------------------------------------------------------------
+   04. TEMA INGECAP — ACENTO AZUL (página ingecap.html)
+   -------------------------------------------------------------------------- */
+.page-ingecap {
+  --avr-accent: #3b82f6;
+  --avr-accent-strong: #1d4ed8;
+}
+
+.page-ingecap .btn-avr-accent {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.4);
+}
+
+.page-ingecap .btn-avr-accent:hover {
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(29, 78, 216, 0.5);
+}
+
+.page-ingecap .section-eyebrow {
+  color: #dbeafe;
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.page-ingecap .section-title,
+.page-ingecap .service-body h4 {
+  color: #1d4ed8;
+}
+
+.page-ingecap .service-carousel .carousel-control-prev-icon,
+.page-ingecap .service-carousel .carousel-control-next-icon {
+  background-color: rgba(59, 130, 246, 0.95);
+}
+
+.page-ingecap .service-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.page-ingecap .service-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #1d4ed8;
+}
+
+.page-ingecap .ingecap-contact .contact-inline {
+  border-color: rgba(59, 130, 246, 0.55);
+}
+
+.page-ingecap .ingecap-contact .contact-inline:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.page-ingecap .ingecap-contact .contact-inline i {
+  color: #60a5fa;
+}
+
+.page-ingecap .ingecap-contact .contact-inline:hover i {
+  color: #fff;
+}

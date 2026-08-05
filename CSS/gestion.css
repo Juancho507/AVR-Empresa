@@ -1,0 +1,137 @@
+/* ==========================================================================
+   AVR PROYECCIONES AMBIENTALES — gestion.css
+   --------------------------------------------------------------------------
+   Estilos de Vistas/Gestion.html
+   --------------------------------------------------------------------------
+   Índice:
+     01. Tarjetas de residuos (galería de categorías)
+     02. Función principal
+     03. Sección Residuos Peligrosos (galería + tarjetas informativas)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. TARJETAS DE RESIDUOS
+   -------------------------------------------------------------------------- */
+.residuo-card {
+  height: 100%;
+  background: #fff;
+  border: 1px solid var(--avr-line);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--avr-shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.residuo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--avr-shadow);
+  border-color: rgba(242, 169, 59, 0.5);
+}
+
+.residuo-card .residuo-thumb {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--avr-green-900);
+}
+
+.residuo-card .residuo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.residuo-card:hover .residuo-thumb img {
+  transform: scale(1.08);
+}
+
+.residuo-card .residuo-body {
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.residuo-card .residuo-nombre {
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+  color: var(--avr-green-800);
+  margin: 0;
+}
+
+.residuo-card .residuo-tag {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--avr-muted);
+}
+
+/* --------------------------------------------------------------------------
+   02. FUNCIÓN PRINCIPAL
+   -------------------------------------------------------------------------- */
+.gestion-card {
+  background: linear-gradient(160deg, var(--avr-green-900), var(--avr-green-800));
+  color: #fff;
+  border: 1px solid rgba(242, 169, 59, 0.35);
+  box-shadow: var(--avr-shadow-lg);
+}
+
+.gestion-card h2 {
+  color: var(--avr-accent) !important;
+}
+
+.gestion-card p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* --------------------------------------------------------------------------
+   03. SECCIÓN RESIDUOS PELIGROSOS
+   -------------------------------------------------------------------------- */
+.peligrosos-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, var(--avr-bg) 0%, rgba(18, 56, 36, 0.1) 100%);
+}
+
+.peligrosos-section .avr-card--dark ul li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.peligrosos-section .avr-card--dark ul i {
+  color: var(--avr-accent);
+}
+
+/* Tarjeta informativa de peligrosos */
+.peligrosos-info-card {
+  height: 100%;
+  text-align: center;
+  padding: 1.9rem 1.5rem;
+}
+
+.peligrosos-info-card .pi-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 1rem;
+  border-radius: 0.9rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.45rem;
+  color: var(--avr-green-950);
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+}
+
+.peligrosos-info-card h5 {
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--avr-green-800);
+  margin-bottom: 0.6rem;
+}
+
+.peligrosos-info-card p {
+  font-size: 0.92rem;
+  color: var(--avr-muted);
+  margin-bottom: 0;
+}

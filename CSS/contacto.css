@@ -1,0 +1,74 @@
+/* ==========================================================================
+   AVR PROYECCIONES AMBIENTALES — contacto.css
+   --------------------------------------------------------------------------
+   Estilos de Vistas/Contacto.html
+   --------------------------------------------------------------------------
+   Índice:
+     01. Tarjetas de contacto
+     02. Bloque de llamada a la acción
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. TARJETAS DE CONTACTO
+   -------------------------------------------------------------------------- */
+.contact-card {
+  height: 100%;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.contact-card .cc-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 1.1rem;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--avr-green-600), var(--avr-green-800));
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover .cc-icon {
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+  transform: scale(1.06);
+}
+
+.contact-card h5 {
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--avr-green-800);
+  margin-bottom: 0.6rem;
+}
+
+.contact-card p {
+  color: var(--avr-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-card a {
+  color: var(--avr-green-700);
+  font-weight: 600;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  color: var(--avr-accent-strong);
+}
+
+/* --------------------------------------------------------------------------
+   02. BLOQUE DE LLAMADA A LA ACCIÓN
+   -------------------------------------------------------------------------- */
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta .lead {
+  color: rgba(255, 255, 255, 0.9);
+}

@@ -1,0 +1,540 @@
+/* ==========================================================================
+   AVR PROYECCIONES AMBIENTALES — inicio.css
+   --------------------------------------------------------------------------
+   Estilos exclusivos de index.html
+   --------------------------------------------------------------------------
+   Índice:
+     01. Hero principal (título + estadísticas destacadas)
+     02. Sección La Empresa / Quiénes Somos
+     03. Misión y Visión
+     04. Banda INGECAP (alianza estratégica)
+     05. ¿Sabías que? (carrusel informativo)
+     06. Nuestras Operaciones (galería de capacidades)
+     07. Flecha de scroll
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. HERO PRINCIPAL
+   -------------------------------------------------------------------------- */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-title-card {
+  background: linear-gradient(140deg, rgba(8, 23, 15, 0.9), rgba(18, 56, 36, 0.8));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(242, 169, 59, 0.3);
+  border-radius: var(--avr-radius-lg);
+  box-shadow: 0 30px 70px rgba(8, 23, 15, 0.55);
+  padding: 2.6rem 2rem;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--avr-accent);
+  border: 1px solid rgba(242, 169, 59, 0.45);
+  border-radius: 50rem;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.hero-title-card h1 {
+  font-family: var(--avr-font-display);
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-card p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-cta .btn {
+  margin: 0.35rem;
+}
+
+/* Estadísticas / indicadores corporativos del hero */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.hero-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  padding: 0.95rem 1.4rem;
+  border-radius: 1rem;
+  background: rgba(8, 23, 15, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(242, 169, 59, 0.45);
+  box-shadow: 0 16px 40px rgba(8, 23, 15, 0.4);
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(8, 23, 15, 0.5);
+}
+
+.hero-stat-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 0.85rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  color: var(--avr-green-950);
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+}
+
+.hero-stat-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.hero-stat-text small {
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--avr-accent);
+}
+
+.hero-stat-text strong {
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.92rem;
+  color: #fff;
+}
+
+/* Ajustes responsive del hero (sin cambiar breakpoints existentes) */
+@media (max-width: 767.98px) {
+  #inicio.hero-section {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    padding: 7rem 0 6.5rem;
+  }
+
+  .hero-title-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .hero-title-card h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-stat-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 1.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   02. LA EMPRESA / QUIÉNES SOMOS
+   -------------------------------------------------------------------------- */
+.avr-card .lead strong {
+  color: var(--avr-green-700);
+}
+
+/* --------------------------------------------------------------------------
+   03. MISIÓN Y VISIÓN
+   -------------------------------------------------------------------------- */
+.mv-card {
+  height: 100%;
+  padding: 1.8rem;
+  text-align: center;
+}
+
+.mv-card .mv-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: var(--avr-accent-strong);
+  background: rgba(242, 169, 59, 0.14);
+}
+
+.mv-card h4 {
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  color: var(--avr-green-700);
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   04. BANDA INGECAP (alianza estratégica)
+   -------------------------------------------------------------------------- */
+.ingecap-band {
+  padding: 5rem 0;
+}
+
+.ingecap-band-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--avr-radius-lg);
+  background: linear-gradient(140deg, var(--avr-green-950) 0%, var(--avr-green-800) 60%, var(--avr-green-900) 100%);
+  border: 1px solid rgba(242, 169, 59, 0.35);
+  box-shadow: var(--avr-shadow-lg);
+  padding: 2.75rem;
+}
+
+.ingecap-band-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(242, 169, 59, 0.18), transparent 45%);
+  pointer-events: none;
+}
+
+.ingecap-logo {
+  max-width: 230px;
+  border-radius: 1rem;
+  box-shadow: var(--avr-shadow);
+}
+
+/* Tema azul INGECAP (solo dentro de esta banda) */
+.ingecap-band {
+  --avr-accent: #3b82f6;
+  --avr-accent-strong: #1d4ed8;
+}
+
+.ingecap-band-card {
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.ingecap-band-card::before {
+  background: radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.22), transparent 45%);
+}
+
+.ingecap-band .section-eyebrow {
+  color: #dbeafe;
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(59, 130, 246, 0.45);
+}
+
+.ingecap-band .btn-avr-accent {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.45);
+}
+
+.ingecap-band .btn-avr-accent:hover {
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(29, 78, 216, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   05. ¿SABÍAS QUE? (carrusel informativo)
+   -------------------------------------------------------------------------- */
+.sabias-que {
+  background: linear-gradient(160deg, rgba(8, 23, 15, 0.93), rgba(18, 56, 36, 0.9));
+  padding: 5rem 0;
+  color: #fff;
+}
+
+.sabias-que .sabias-que-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--avr-radius-lg);
+  padding: 2.5rem;
+}
+
+.sabias-que h2 {
+  font-family: var(--avr-font-display);
+  font-weight: 900;
+  color: var(--avr-accent);
+  margin-bottom: 2rem;
+}
+
+.sabias-que .carousel-item .lead {
+  color: #fff;
+}
+
+.sabias-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--avr-radius);
+  box-shadow: var(--avr-shadow);
+}
+
+@media (min-width: 768px) {
+  .sabias-img {
+    height: 260px;
+  }
+}
+
+#sabiasQueCarousel .carousel-inner {
+  padding: 0 50px;
+}
+
+#sabiasQueCarousel .carousel-control-prev,
+#sabiasQueCarousel .carousel-control-next {
+  filter: invert(100%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  opacity: 1;
+}
+
+#sabiasQueCarousel .carousel-control-prev { left: -10px; }
+#sabiasQueCarousel .carousel-control-next { right: -10px; }
+
+/* --------------------------------------------------------------------------
+   06. NUESTRAS OPERACIONES
+   -------------------------------------------------------------------------- */
+.operaciones-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, var(--avr-bg) 0%, #ffffff 100%);
+}
+
+/* Tarjeta de operación (placeholder con ícono; acepta <img class="op-photo">) */
+.op-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--avr-radius-lg);
+  overflow: hidden;
+  padding: 1.25rem;
+  background: linear-gradient(165deg, var(--avr-green-700) 0%, var(--avr-green-900) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--avr-shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.op-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--avr-shadow-lg);
+  border-color: var(--avr-accent);
+}
+
+.op-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 15%, rgba(242, 169, 59, 0.22), transparent 42%);
+  pointer-events: none;
+}
+
+/* Borde punteado que indica "espacio para imagen futura" */
+.op-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.8rem;
+  border: 1px dashed rgba(242, 169, 59, 0.4);
+  border-radius: 0.9rem;
+  pointer-events: none;
+}
+
+/* Cuando ya se agrega una foto real se elimina el borde punteado */
+.op-card.has-photo::after {
+  display: none;
+}
+
+.op-card .op-icon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.6rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  color: var(--avr-green-950);
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+  border-radius: 0.7rem;
+}
+
+.op-card .op-name {
+  position: relative;
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.op-card img.op-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.op-note {
+  color: var(--avr-muted);
+  font-size: 0.95rem;
+}
+
+.op-note a {
+  color: var(--avr-green-700);
+  font-weight: 600;
+}
+
+.op-note a:hover {
+  color: var(--avr-accent-strong);
+}
+
+/* --------------------------------------------------------------------------
+   06b. TARJETAS GRANDES DE OPERACIÓN (galería multi-imagen)
+   -------------------------------------------------------------------------- */
+.op-card-big {
+  position: relative;
+  border-radius: var(--avr-radius-lg);
+  overflow: hidden;
+  background: var(--avr-green-950);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--avr-shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.op-card-big:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--avr-shadow-lg);
+  border-color: var(--avr-accent);
+}
+
+.op-card-big .op-carousel .op-photo,
+.op-card-big .op-photo--placeholder {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .op-card-big .op-carousel .op-photo,
+  .op-card-big .op-photo--placeholder {
+    height: 270px;
+  }
+}
+
+.op-card-big .op-photo--placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  color: var(--avr-accent);
+  background: linear-gradient(165deg, var(--avr-green-700), var(--avr-green-900));
+}
+
+.op-card-big .op-photo--placeholder small {
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--avr-font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.op-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(180deg, transparent, rgba(8, 23, 15, 0.88));
+}
+
+.op-caption .op-icon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  color: var(--avr-green-950);
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+  border-radius: 0.65rem;
+}
+
+.op-caption .op-name {
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #fff;
+  line-height: 1.35;
+}
+
+.op-card-big .op-carousel .carousel-control-prev,
+.op-card-big .op-carousel .carousel-control-next {
+  width: 14%;
+}
+
+.op-card-big .op-carousel .carousel-control-prev-icon,
+.op-card-big .op-carousel .carousel-control-next-icon {
+  background-color: rgba(242, 169, 59, 0.9);
+  border-radius: 50%;
+  padding: 9px;
+  background-size: 55%;
+}
+
+.op-card-big .op-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.op-card-big .op-carousel .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: var(--avr-accent-strong);
+}
+
+/* --------------------------------------------------------------------------
+   07. FLECHA DE SCROLL
+   -------------------------------------------------------------------------- */
+.scroll-down-arrow {
+  z-index: 3;
+  animation: avr-scroll-pulse 2s ease-in-out infinite;
+}
+
+@keyframes avr-scroll-pulse {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50%      { opacity: 0.65; transform: translateY(6px); }
+}

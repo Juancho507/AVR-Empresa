@@ -1,0 +1,592 @@
+/* ==========================================================================
+   AVR PROYECCIONES AMBIENTALES — global.css
+   --------------------------------------------------------------------------
+   Diseño industrial · ambiental · corporativo
+   --------------------------------------------------------------------------
+   Índice:
+     01. Tokens de diseño (paleta, tipografía, sombras, radios)
+     02. Base y tipografía
+     03. Utilidades propias
+     04. Fondo de carrusel (fijo detrás de todo el sitio)
+     05. Barra de navegación
+     06. Botones y badges
+     07. Cabeceras de sección y separadores
+     08. Tarjetas
+     09. Galerías multimedia (imágenes + video uniformes)
+     10. Tiles placeholder (espacios para imágenes futuras)
+     11. Footer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. TOKENS DE DISEÑO
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta verde ambiental (base) */
+  --avr-green-950: #08170f;
+  --avr-green-900: #0b2417;
+  --avr-green-800: #123824;
+  --avr-green-700: #1b5e20;
+  --avr-green-600: #2e7d32;
+  --avr-green-500: #43a047;
+  --avr-green-400: #66bb6a;
+  --avr-green-100: #e8f5e9;
+
+  /* Acento industrial (ámbar) */
+  --avr-accent: #f2a93b;
+  --avr-accent-strong: #e08a1e;
+
+  /* Grises / neutros */
+  --avr-steel: #37474f;
+  --avr-slate: #eceff1;
+  --avr-bg: #f3f6f3;
+  --avr-ink: #22302a;
+  --avr-muted: #5d6b63;
+  --avr-line: rgba(27, 94, 32, 0.12);
+
+  /* Sombras y radios */
+  --avr-shadow-sm: 0 4px 14px rgba(8, 23, 15, 0.08);
+  --avr-shadow: 0 14px 34px rgba(8, 23, 15, 0.13);
+  --avr-shadow-lg: 0 26px 60px rgba(8, 23, 15, 0.18);
+  --avr-radius: 0.95rem;
+  --avr-radius-lg: 1.35rem;
+
+  /* Tipografía */
+  --avr-font-display: 'Raleway', sans-serif;
+  --avr-font-heading: 'Poppins', sans-serif;
+  --avr-font-body: 'Roboto', sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   02. BASE Y TIPOGRAFÍA
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--avr-font-body);
+  color: var(--avr-ink);
+  background-color: var(--avr-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--avr-font-display);
+  font-weight: 800;
+  color: var(--avr-green-800);
+}
+
+::selection {
+  background: var(--avr-accent);
+  color: var(--avr-green-950);
+}
+
+/* Enlace con acento ámbar */
+.text-accent {
+  color: var(--avr-accent) !important;
+}
+
+/* Contenedor principal por encima del carrusel de fondo */
+.main-content {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #f5f8f5 0%, #eaf0eb 100%);
+}
+
+.content-section {
+  padding: 5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   03. UTILIDADES PROPIAS
+   -------------------------------------------------------------------------- */
+.lh-1 {
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   04. FONDO DE CARRUSEL (fijo detrás del sitio)
+   -------------------------------------------------------------------------- */
+#background-carousel,
+#background-carousel-gestion,
+#background-carousel-servicios,
+#background-carousel-nosotros,
+#background-carousel-contacto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#background-carousel .carousel-inner,
+#background-carousel-gestion .carousel-inner,
+#background-carousel-servicios .carousel-inner,
+#background-carousel-nosotros .carousel-inner,
+#background-carousel-contacto .carousel-inner {
+  height: 100%;
+}
+
+#background-carousel .carousel-item,
+#background-carousel-gestion .carousel-item,
+#background-carousel-servicios .carousel-item,
+#background-carousel-nosotros .carousel-item,
+#background-carousel-contacto .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#background-carousel .carousel-item img,
+#background-carousel-gestion .carousel-item img,
+#background-carousel-servicios .carousel-item img,
+#background-carousel-nosotros .carousel-item img,
+#background-carousel-contacto .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   05. BARRA DE NAVEGACIÓN
+   -------------------------------------------------------------------------- */
+.transparent-navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+}
+
+.transparent-navbar .navbar-card {
+  background: linear-gradient(120deg, rgba(8, 23, 15, 0.94), rgba(18, 56, 36, 0.88));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(242, 169, 59, 0.4);
+  box-shadow: 0 10px 30px rgba(8, 23, 15, 0.35);
+  padding: 10px 20px;
+}
+
+/* Marca: AVR + subtítulo */
+.brand-name {
+  font-family: var(--avr-font-heading);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.brand-sub {
+  font-family: var(--avr-font-heading);
+  font-weight: 500;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--avr-accent);
+  line-height: 1;
+  margin-top: 4px;
+}
+
+/* Enlaces del menú */
+.transparent-navbar .navbar-nav .nav-link {
+  position: relative;
+  color: #fff !important;
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  margin: 0 15px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  padding: 0.6rem 0.1rem;
+  transition: color 0.25s ease;
+}
+
+.transparent-navbar .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--avr-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.transparent-navbar .navbar-nav .nav-link:hover::after,
+.transparent-navbar .navbar-nav .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.transparent-navbar .navbar-nav .nav-link:hover,
+.transparent-navbar .navbar-nav .nav-link.active {
+  color: var(--avr-accent) !important;
+}
+
+@media (max-width: 991.98px) {
+  .transparent-navbar .navbar-collapse {
+    background-color: rgba(8, 23, 15, 0.95);
+    padding: 20px;
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   06. BOTONES Y BADGES
+   -------------------------------------------------------------------------- */
+.btn-avr,
+.btn-avr-accent,
+.btn-avr-outline,
+.btn-avr-outline-light {
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 50rem;
+  padding: 0.75rem 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-avr {
+  background: linear-gradient(135deg, var(--avr-green-700), var(--avr-green-800));
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(27, 94, 32, 0.35);
+}
+
+.btn-avr:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(27, 94, 32, 0.42);
+}
+
+.btn-avr-accent {
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+  color: var(--avr-green-950);
+  box-shadow: 0 10px 24px rgba(224, 138, 30, 0.4);
+}
+
+.btn-avr-accent:hover {
+  color: var(--avr-green-950);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(224, 138, 30, 0.48);
+}
+
+.btn-avr-outline {
+  border: 2px solid var(--avr-green-600);
+  color: var(--avr-green-700);
+}
+
+.btn-avr-outline:hover {
+  background: var(--avr-green-600);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.3);
+}
+
+.btn-avr-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: #fff;
+}
+
+.btn-avr-outline-light:hover {
+  background: #fff;
+  color: var(--avr-green-900);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(8, 23, 15, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   07. CABECERAS DE SECCIÓN Y SEPARADORES
+   -------------------------------------------------------------------------- */
+.section-head {
+  max-width: 780px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--avr-accent-strong);
+  background: rgba(242, 169, 59, 0.12);
+  border: 1px solid rgba(242, 169, 59, 0.35);
+  padding: 0.4rem 0.95rem;
+  border-radius: 50rem;
+  margin-bottom: 0.9rem;
+}
+
+.section-title {
+  font-family: var(--avr-font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--avr-green-800);
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  color: var(--avr-muted);
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+/* Separador horizontal con ícono central */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 0 1rem;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  height: 2px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--avr-green-500), transparent);
+}
+
+.section-divider i {
+  font-size: 1.4rem;
+  color: var(--avr-accent);
+}
+
+/* --------------------------------------------------------------------------
+   08. TARJETAS
+   -------------------------------------------------------------------------- */
+.avr-card {
+  background: #fff;
+  border: 1px solid var(--avr-line);
+  border-radius: var(--avr-radius-lg);
+  box-shadow: var(--avr-shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.avr-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--avr-shadow);
+  border-color: rgba(242, 169, 59, 0.5);
+}
+
+.avr-card--tint {
+  background: linear-gradient(160deg, #ffffff 0%, var(--avr-green-100) 100%);
+}
+
+.avr-card--dark {
+  background: linear-gradient(160deg, var(--avr-green-900) 0%, var(--avr-green-800) 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.avr-card--dark h2,
+.avr-card--dark h3,
+.avr-card--dark h4,
+.avr-card--dark h5 {
+  color: #fff;
+}
+
+.avr-card--dark p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.avr-card--dark .list-unstyled li {
+  margin-bottom: 0.55rem;
+}
+
+/* Tarjeta contenedora grande: no se eleva al pasar el cursor */
+.avr-card--static,
+.avr-card--static:hover {
+  transform: none;
+}
+
+.avr-card--static:hover {
+  box-shadow: var(--avr-shadow);
+  border-color: rgba(242, 169, 59, 0.5);
+}
+
+/* Compatibilidad con la clase antigua */
+.content-card {
+  background: #fff;
+  border: 1px solid var(--avr-line);
+  border-radius: var(--avr-radius-lg);
+  box-shadow: var(--avr-shadow-sm);
+}
+
+.content-card h2,
+.content-card h4 {
+  font-family: var(--avr-font-display);
+  color: var(--avr-green-800);
+  text-transform: uppercase;
+}
+
+.content-card p {
+  color: var(--avr-ink);
+}
+
+/* Tarjeta oscura clásica */
+.dark-card {
+  background: linear-gradient(160deg, rgba(8, 23, 15, 0.85), rgba(18, 56, 36, 0.8));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(242, 169, 59, 0.25);
+  border-radius: var(--avr-radius-lg);
+  box-shadow: var(--avr-shadow);
+}
+
+.dark-card h2 {
+  font-family: var(--avr-font-display);
+  font-weight: 900;
+  color: #fff;
+}
+
+.dark-card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   09. GALERÍAS MULTIMEDIA (imágenes y video con apariencia uniforme)
+   -------------------------------------------------------------------------- */
+.media-tile {
+  position: relative;
+  border-radius: var(--avr-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--avr-shadow-sm);
+  background: var(--avr-green-900);
+}
+
+.media-tile img,
+.media-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Proporciones uniformes para galerías */
+.media-tile--4x3  { aspect-ratio: 4 / 3; }
+.media-tile--1x1  { aspect-ratio: 1 / 1; }
+.media-tile--16x9 { aspect-ratio: 16 / 9; }
+
+/* Zoom suave al pasar el cursor */
+.media-hover-zoom img,
+.media-hover-zoom video {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.media-tile:hover .media-hover-zoom img,
+.media-tile:hover .media-hover-zoom video {
+  transform: scale(1.07);
+}
+
+/* Pie de foto en la galería */
+.media-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.4rem 1rem 0.7rem;
+  background: linear-gradient(transparent, rgba(8, 23, 15, 0.88));
+  color: #fff;
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Insignia "VIDEO" sobre los tiles de video */
+.media-video-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(242, 169, 59, 0.95);
+  color: var(--avr-green-950);
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 50rem;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   10. TILES PLACEHOLDER (espacios preparados para imágenes futuras)
+   -------------------------------------------------------------------------- */
+.placeholder-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--avr-radius-lg);
+  background: linear-gradient(160deg, var(--avr-green-800) 0%, var(--avr-green-900) 100%);
+  border: 1px dashed rgba(242, 169, 59, 0.5);
+  color: #fff;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.placeholder-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+}
+
+.placeholder-tile .ph-icon {
+  position: relative;
+  font-size: 2.1rem;
+  color: var(--avr-accent);
+}
+
+.placeholder-tile .ph-label {
+  position: relative;
+  font-family: var(--avr-font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  color: #cfe3d6;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   11. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: linear-gradient(160deg, var(--avr-green-900) 0%, var(--avr-green-950) 100%);
+  color: rgba(255, 255, 255, 0.85);
+  border-top: 3px solid var(--avr-accent);
+}
+
+.site-footer a {
+  color: var(--avr-accent);
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
