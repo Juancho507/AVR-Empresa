@@ -444,15 +444,18 @@
 }
 
 .op-card-big .op-carousel .op-photo,
-.op-card-big .op-photo--placeholder {
+.op-card-big .op-photo--placeholder,
+.op-card-big video.op-photo {
   width: 100%;
   height: 230px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--avr-green-950);
 }
 
 @media (min-width: 768px) {
   .op-card-big .op-carousel .op-photo,
-  .op-card-big .op-photo--placeholder {
+  .op-card-big .op-photo--placeholder,
+  .op-card-big video.op-photo {
     height: 270px;
   }
 }
