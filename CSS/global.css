@@ -228,10 +228,40 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 991.98px) {
+  .transparent-navbar .navbar-card {
+    padding: 10px 14px;
+  }
+
+  .transparent-navbar .navbar-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .transparent-navbar .navbar-brand .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .transparent-navbar .navbar-brand .brand-sub {
+    font-size: 0.5rem;
+    letter-spacing: 0.16em;
+  }
+
   .transparent-navbar .navbar-collapse {
-    background-color: rgba(8, 23, 15, 0.95);
-    padding: 20px;
+    background-color: rgba(8, 23, 15, 0.96);
+    padding: 18px 10px;
     border-radius: 0 0 1rem 1rem;
+    text-align: center;
+  }
+
+  .transparent-navbar .navbar-collapse .navbar-nav {
+    align-items: center;
+  }
+
+  .transparent-navbar .navbar-nav .nav-link {
+    margin: 0;
+    padding: 0.65rem 0.25rem;
+    font-size: 0.78rem;
+    text-align: center;
   }
 }
 

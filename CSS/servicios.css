@@ -116,7 +116,12 @@
 .ingecap-contact .contact-inline {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.55rem;
+  max-width: 100%;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
   font-family: var(--avr-font-heading);
   font-weight: 500;
   color: #fff;
