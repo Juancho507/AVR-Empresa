@@ -56,7 +56,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.8rem;
-  color: var(--avr-green-800);
+  color: var(--avr-green-text);
   margin: 0;
 }
 
@@ -71,18 +71,18 @@
    02. FUNCIÓN PRINCIPAL
    -------------------------------------------------------------------------- */
 .gestion-card {
-  background: linear-gradient(160deg, var(--avr-green-900), var(--avr-green-800));
-  color: #fff;
+  background: linear-gradient(160deg, var(--avr-green-500), var(--avr-green-400));
+  color: var(--avr-green-text);
   border: 1px solid rgba(242, 169, 59, 0.35);
   box-shadow: var(--avr-shadow-lg);
 }
 
 .gestion-card h2 {
-  color: var(--avr-accent) !important;
+  color: var(--avr-accent-strong) !important;
 }
 
 .gestion-card p {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #171717 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -90,15 +90,15 @@
    -------------------------------------------------------------------------- */
 .peligrosos-section {
   padding: 5rem 0;
-  background: linear-gradient(180deg, var(--avr-bg) 0%, rgba(18, 56, 36, 0.1) 100%);
+  background: linear-gradient(180deg, var(--avr-bg) 0%, rgba(151, 201, 74, 0.16) 100%);
 }
 
 .peligrosos-section .avr-card--dark ul li {
-  color: rgba(255, 255, 255, 0.85);
+  color: #171717;
 }
 
 .peligrosos-section .avr-card--dark ul i {
-  color: var(--avr-accent);
+  color: var(--avr-accent-strong);
 }
 
 /* Tarjeta informativa de peligrosos */
@@ -126,7 +126,7 @@
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--avr-green-800);
+  color: var(--avr-green-text);
   margin-bottom: 0.6rem;
 }
 

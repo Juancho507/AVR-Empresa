@@ -27,7 +27,7 @@
    02. BANDA DE ESTADÍSTICAS CORPORATIVAS
    -------------------------------------------------------------------------- */
 .stats-band {
-  background: linear-gradient(140deg, var(--avr-green-900), var(--avr-green-800));
+  background: linear-gradient(140deg, var(--avr-green-500), var(--avr-green-400));
   border: 1px solid rgba(242, 169, 59, 0.35);
   border-radius: var(--avr-radius-lg);
   box-shadow: var(--avr-shadow-lg);
@@ -36,7 +36,7 @@
 
 .stat-block {
   text-align: center;
-  color: #fff;
+  color: var(--avr-green-text);
   padding: 0.75rem;
 }
 
@@ -46,7 +46,21 @@
   font-weight: 900;
   font-size: 2.3rem;
   line-height: 1.1;
-  color: var(--avr-accent);
+  white-space: nowrap;
+  color: var(--avr-accent-strong);
+}
+
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 0.6rem;
+  font-size: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--avr-accent), var(--avr-accent-strong));
+  border-radius: 1rem;
 }
 
 .stat-block span {
@@ -55,7 +69,17 @@
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  color: #171717;
+}
+
+.stat-block--counter strong {
+  font-size: 2.7rem;
+}
+
+.stat-block strong .stat-count {
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }
 
 /* --------------------------------------------------------------------------
@@ -71,7 +95,7 @@
 
 .video-frame {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   border-radius: 1rem;
   overflow: hidden;
   background: #000;
@@ -80,6 +104,17 @@
 .video-frame video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+}
+
+.video-label {
+  margin: 0.85rem 0 0;
+  font-family: var(--avr-font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--avr-green-100);
+  text-align: center;
 }

@@ -79,22 +79,32 @@
 
         <div class="stats-band mt-5">
           <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-4">
+            <div class="col-6 col-md-3">
               <div class="stat-block">
+                <span class="stat-icon"><i class="bi bi-award-fill"></i></span>
                 <strong>10+</strong>
                 <span>Años de Experiencia</span>
               </div>
             </div>
-            <div class="col-6 col-md-4">
+            <div class="col-6 col-md-3">
               <div class="stat-block">
+                <span class="stat-icon"><i class="bi bi-globe2"></i></span>
                 <strong>100%</strong>
                 <span>Cobertura Nacional</span>
               </div>
             </div>
-            <div class="col-6 col-md-4">
+            <div class="col-6 col-md-3">
               <div class="stat-block">
+                <span class="stat-icon"><i class="bi bi-clock-history"></i></span>
                 <strong>24/7</strong>
                 <span>Operación Continua</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-block stat-block--counter">
+                <span class="stat-icon"><i class="bi bi-calendar2-check"></i></span>
+                <strong>2026 - <span class="stat-count" data-count="1380">0</span></strong>
+                <span>Toneladas procesadas</span>
               </div>
             </div>
           </div>
@@ -109,12 +119,50 @@
           <h2 class="section-title">AVR 2022</h2>
           <p class="section-subtitle">Un recorrido por nuestras operaciones y nuestra gente.</p>
         </div>
-        <div class="video-card rounded-4 p-2 p-md-3">
-          <div class="video-frame">
-            <video controls preload="metadata" poster="../Img/gestion1.jpg">
-              <source src="../Video/avr-2022.mp4" type="video/mp4">
-              Tu navegador no soporta la reproducción de video.
-            </video>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="video-card rounded-4 p-2 p-md-3 h-100">
+              <div class="video-frame">
+                <video controls preload="metadata" poster="../Img/gestion1.jpg">
+                  <source src="../Video/avr-2022.mp4" type="video/mp4">
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+              <p class="video-label">AVR 2022</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="video-card rounded-4 p-2 p-md-3 h-100">
+              <div class="video-frame">
+                <video controls preload="metadata">
+                  <source src="../Video/avr-operaciones.mp4" type="video/mp4">
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+              <p class="video-label">Operaciones en planta</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="video-card rounded-4 p-2 p-md-3 h-100">
+              <div class="video-frame">
+                <video controls preload="metadata">
+                  <source src="../Video/avr-operaciones2.mp4" type="video/mp4">
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+              <p class="video-label">Operaciones de manejo</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="video-card rounded-4 p-2 p-md-3 h-100">
+              <div class="video-frame">
+                <video controls preload="metadata">
+                  <source src="../Video/TU-VIDEO.mp4" type="video/mp4">
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+              </div>
+              <p class="video-label">Proceso de plásticos</p>
+            </div>
           </div>
         </div>
       </div>
@@ -129,5 +177,22 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var counter = document.querySelector('.stat-count');
+      if (!counter) return;
+      var target = parseInt(counter.getAttribute('data-count'), 10);
+      var duration = 2200;
+      var start = null;
+      function tick(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        counter.textContent = Math.round(target * eased).toLocaleString('es-CO');
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  </script>
 </body>
 </html>
